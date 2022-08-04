@@ -1,0 +1,11 @@
+<a href = "/auth/google" target = "_blank">Login With google</a><br />
+<a href="/logout">logout</a>
+
+<h1><%= user.username %>'s Subscribers</h1>
+<% if(user.google.length > 0){ %>
+    <% user.google.forEach((subscriber) => { %>
+        <p><%= subscriber.displayName %></p>
+    <% }) %>
+<% }else{ %>
+    <p>No subscribers Yet!! Ka boom</p>
+<% } %>
