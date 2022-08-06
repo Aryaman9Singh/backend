@@ -27,9 +27,9 @@ module.exports = function(User, passport, pass){
         dashboard: function(req, res){
             if(req.user){
                 console.log(req.user.username + " Logged in");
-                return res.render('dashboard', { user: req.user});
+                return res.json({"status": 200, user: req.user})
             }else{
-                res.redirect('/');
+                return res.json({ "status": 422})
             }
 
         },
